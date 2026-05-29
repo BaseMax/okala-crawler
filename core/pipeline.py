@@ -11,7 +11,6 @@ logger = get_logger("pipeline")
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-
 class DataPipeline:
     @staticmethod
     def _atomic_write(path: str, data: Any) -> None:

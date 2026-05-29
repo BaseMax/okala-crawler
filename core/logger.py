@@ -10,10 +10,7 @@ _FILE_FMT = logging.Formatter(
     datefmt="%Y-%m-%d %H:%M:%S",
 )
 
-
 class _AnsiFormatter(logging.Formatter):
-    """Fallback colored formatter when rich is not installed."""
-
     _COLORS = {
         "DEBUG":    "\033[36m",   # cyan
         "INFO":     "\033[32m",   # green

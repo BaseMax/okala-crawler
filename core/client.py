@@ -13,7 +13,6 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 logger = get_logger("http-client")
 
-
 class HTTPClient:
     def __init__(self) -> None:
         self.session = requests.Session()

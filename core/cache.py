@@ -10,7 +10,6 @@ from core.logger import get_logger
 
 logger = get_logger("cache")
 
-
 class CacheManager:
     def __init__(self, ttl: int = CACHE_TTL) -> None:
         self.ttl = ttl
