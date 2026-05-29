@@ -1,5 +1,9 @@
 # okala-crawler
 
+Help me to fully design this project in python, with ability to save and cache html files in a cache dir to refuse sending dublicate request to same url and save time for future running. also save and generate data in json format. I want to fully handla all errors, possible problems, having full error handling to save in log file and print logs in a nice and human readable way. do best as senior crawler and senior python developer.
+
+Generally, for sending requests turn of checking host, checking ssl, and everything and increase timeout.
+
 ## Data
 
 Here are list of several store IDs, and all main categories IDs.

@@ -1,0 +1,12 @@
+[2026-05-29 16:21:06,171] [INFO] http-client: GET https://apigateway.okala.com/api/unicorn/v2/products/store/2319?pC_Id=1467&slug=refreshments
+[2026-05-29 16:21:07,867] [INFO] http-client: GET https://apigateway.okala.com/api/unicorn/v2/products/store/2319?pC_Id=1461&slug=groceries
+[2026-05-29 16:21:08,188] [INFO] http-client: GET https://apigateway.okala.com/api/unicorn/v2/products/store/10458?pC_Id=1467&slug=refreshments
+[2026-05-29 16:21:08,325] [INFO] http-client: GET https://apigateway.okala.com/api/unicorn/v2/products/store/10458?pC_Id=1461&slug=groceries
+[2026-05-29 16:21:21,865] [INFO] crawler: [CACHE HIT] https://apigateway.okala.com/api/unicorn/v2/products/store/2319?pC_Id=1467&slug=refreshments
+[2026-05-29 16:21:21,895] [INFO] crawler: [CACHE HIT] https://apigateway.okala.com/api/unicorn/v2/products/store/2319?pC_Id=1461&slug=groceries
+[2026-05-29 16:21:21,917] [INFO] crawler: [CACHE HIT] https://apigateway.okala.com/api/unicorn/v2/products/store/10458?pC_Id=1467&slug=refreshments
+[2026-05-29 16:21:21,935] [INFO] crawler: [CACHE HIT] https://apigateway.okala.com/api/unicorn/v2/products/store/10458?pC_Id=1461&slug=groceries
+[2026-05-29 16:21:25,560] [INFO] crawler: [CACHE HIT] https://apigateway.okala.com/api/unicorn/v2/products/store/2319?pC_Id=1467&slug=refreshments
+[2026-05-29 16:21:25,563] [INFO] crawler: [CACHE HIT] https://apigateway.okala.com/api/unicorn/v2/products/store/2319?pC_Id=1461&slug=groceries
+[2026-05-29 16:21:25,564] [INFO] crawler: [CACHE HIT] https://apigateway.okala.com/api/unicorn/v2/products/store/10458?pC_Id=1467&slug=refreshments
+[2026-05-29 16:21:25,565] [INFO] crawler: [CACHE HIT] https://apigateway.okala.com/api/unicorn/v2/products/store/10458?pC_Id=1461&slug=groceries
