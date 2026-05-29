@@ -1,6 +1,13 @@
 cache
+cache/html
+cache/json
 __pycache__
+output
+logs
 
 *.pyc
 *.rar
 *.zip
+
+output/products.json
+logs/crawler.log
