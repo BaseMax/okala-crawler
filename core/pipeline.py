@@ -13,9 +13,6 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 
 class DataPipeline:
-
-    # ── Internal ──────────────────────────────────────────────────────────────
-
     @staticmethod
     def _atomic_write(path: str, data: Any) -> None:
         dir_ = os.path.dirname(path)
@@ -33,8 +30,6 @@ class DataPipeline:
             if tmp_path and os.path.exists(tmp_path):
                 os.remove(tmp_path)
             raise
-
-    # ── Public ────────────────────────────────────────────────────────────────
 
     def save_products(self, results: List[Dict]) -> None:
         valid = [r for r in results if r is not None]

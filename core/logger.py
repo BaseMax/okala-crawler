@@ -41,13 +41,11 @@ def get_logger(name: str = "okala") -> logging.Logger:
     logger.setLevel(logging.DEBUG)
     logger.propagate = False
 
-    # File handler — full detail, no colour codes
     fh = logging.FileHandler(_LOG_FILE, encoding="utf-8")
     fh.setLevel(logging.DEBUG)
     fh.setFormatter(_FILE_FMT)
     logger.addHandler(fh)
 
-    # Console handler — rich if available, ANSI fallback otherwise
     try:
         from rich.logging import RichHandler
 

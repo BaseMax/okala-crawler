@@ -9,7 +9,6 @@ from urllib3.util.retry import Retry
 from config import BACKOFF_FACTOR, MAX_RETRIES, REQUEST_DELAY, TIMEOUT, VERIFY_SSL
 from core.logger import get_logger
 
-# Suppress InsecureRequestWarning that appears when VERIFY_SSL=False
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 logger = get_logger("http-client")
@@ -20,7 +19,6 @@ class HTTPClient:
         self.session = requests.Session()
         self._last_request_at: float = 0.0
 
-        # Retry on transient server/rate-limit errors at the transport level
         retry = Retry(
             total=MAX_RETRIES,
             backoff_factor=BACKOFF_FACTOR,
@@ -32,15 +30,11 @@ class HTTPClient:
         self.session.mount("http://", adapter)
         self.session.mount("https://", adapter)
 
-    # ── Rate limiting ─────────────────────────────────────────────────────────
-
     def _throttle(self) -> None:
         elapsed = time.monotonic() - self._last_request_at
         if elapsed < REQUEST_DELAY:
             time.sleep(REQUEST_DELAY - elapsed)
         self._last_request_at = time.monotonic()
-
-    # ── Public interface ──────────────────────────────────────────────────────
 
     def get(
         self,
@@ -75,8 +69,6 @@ class HTTPClient:
 
         return None
 
-    # ── Response evaluation ───────────────────────────────────────────────────
-
     @staticmethod
     def _handle_response(
         response: requests.Response, url: str
@@ -110,7 +102,6 @@ class HTTPClient:
             logger.error(f"[{code} Server Error] {url}")
             return None
 
-        # Any other non-2xx
         try:
             response.raise_for_status()
         except requests.exceptions.HTTPError as exc:

@@ -17,8 +17,6 @@ class CacheManager:
         os.makedirs(HTML_CACHE, exist_ok=True)
         os.makedirs(JSON_CACHE, exist_ok=True)
 
-    # ── Helpers ───────────────────────────────────────────────────────────────
-
     @staticmethod
     def _key(url: str) -> str:
         return hashlib.md5(url.encode("utf-8")).hexdigest()
@@ -70,8 +68,6 @@ class CacheManager:
                 os.remove(tmp_path)
             raise exc
 
-    # ── JSON cache ────────────────────────────────────────────────────────────
-
     def get_json(self, url: str) -> Optional[Any]:
         key = self._key(url)
         data_path = self._json_path(key)
@@ -115,8 +111,6 @@ class CacheManager:
         except OSError as exc:
             logger.error(f"Failed to write JSON cache for {url}: {exc}")
 
-    # ── HTML cache ────────────────────────────────────────────────────────────
-
     def get_html(self, url: str) -> Optional[str]:
         path = self._html_path(url)
         if not os.path.exists(path):
@@ -135,8 +129,6 @@ class CacheManager:
             logger.debug(f"Cached HTML → {path}")
         except OSError as exc:
             logger.error(f"Failed to write HTML cache for {url}: {exc}")
-
-    # ── Stats ─────────────────────────────────────────────────────────────────
 
     def stats(self) -> dict:
         json_entries = sum(

@@ -6,8 +6,6 @@ from core.pipeline import DataPipeline
 
 logger = get_logger("main")
 
-# ── Store URLs ────────────────────────────────────────────────────────────────
-
 STORES = [
     "https://www.okala.com/store/2319",
     "https://www.okala.com/store/10458",
@@ -29,8 +27,6 @@ STORES = [
     "https://www.okala.com/store/8662",
 ]
 
-# ── Categories (slug, rootId) ─────────────────────────────────────────────────
-
 CATEGORIES = [
     ("kalabarg",           1467),
     ("refreshments",       1467),
@@ -49,9 +45,6 @@ CATEGORIES = [
     ("nuts-sweets",        1468),
     ("multiples",          1850),
 ]
-
-# ── Request headers ───────────────────────────────────────────────────────────
-# Replace the Bearer token with a fresh one before running.
 
 HEADERS = {
     "Authorization": (
@@ -83,13 +76,9 @@ HEADERS = {
     "source":               "okala",
 }
 
-# ── Helpers ───────────────────────────────────────────────────────────────────
-
 def _store_id(url: str) -> int:
     return int(url.rstrip("/").split("/")[-1])
 
-
-# ── Main ──────────────────────────────────────────────────────────────────────
 
 def main() -> None:
     logger.info("=" * 60)
