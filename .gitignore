@@ -8,6 +8,8 @@ logs
 *.pyc
 *.rar
 *.zip
+*.log
+*.json
 
 output/products.json
 logs/crawler.log

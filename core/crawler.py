@@ -1,3 +1,4 @@
+import sys
 import json
 from typing import Any, Dict, List, Optional
 
@@ -86,5 +87,6 @@ class OkalaCrawler:
                 enriched.append(product)
                 continue
             details = self.fetch_product_detail(store_id, pid)
-            enriched.append(details if details else product)
+            print(details)
+            enriched.append(details)
         return enriched

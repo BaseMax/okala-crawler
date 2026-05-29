@@ -54,17 +54,17 @@ class HTTPClient:
             return self._handle_response(response, url)
 
         except requests.exceptions.SSLError as exc:
-            logger.error(f"SSL error — {url} | {exc}")
+            logger.error(f"SSL error - {url} | {exc}")
         except requests.exceptions.ConnectionError as exc:
-            logger.error(f"Connection error — {url} | {exc}")
+            logger.error(f"Connection error - {url} | {exc}")
         except requests.exceptions.Timeout:
-            logger.error(f"Timed out after {TIMEOUT}s — {url}")
+            logger.error(f"Timed out after {TIMEOUT}s - {url}")
         except requests.exceptions.TooManyRedirects:
-            logger.error(f"Too many redirects — {url}")
+            logger.error(f"Too many redirects - {url}")
         except requests.exceptions.RequestException as exc:
-            logger.error(f"Request failed — {url} | {exc}")
+            logger.error(f"Request failed - {url} | {exc}")
         except Exception as exc:
-            logger.critical(f"Unexpected error — {url} | {exc}", exc_info=True)
+            logger.critical(f"Unexpected error - {url} | {exc}", exc_info=True)
 
         return None
 
@@ -80,12 +80,12 @@ class HTTPClient:
 
         if code == 401:
             logger.error(
-                f"[401 Unauthorized] {url} — Bearer token may be expired or invalid"
+                f"[401 Unauthorized] {url} - Bearer token may be expired or invalid"
             )
             return None
 
         if code == 403:
-            logger.error(f"[403 Forbidden] {url} — access denied")
+            logger.error(f"[403 Forbidden] {url} - access denied")
             return None
 
         if code == 404:
@@ -93,7 +93,7 @@ class HTTPClient:
             return None
 
         if code == 429:
-            logger.warning(f"[429 Too Many Requests] {url} — cooling down 15 s")
+            logger.warning(f"[429 Too Many Requests] {url} - cooling down 15 s")
             time.sleep(15)
             return None
 

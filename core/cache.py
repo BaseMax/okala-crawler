@@ -86,7 +86,7 @@ class CacheManager:
             logger.info(f"[CACHE HIT] {url}")
             return data
         except (json.JSONDecodeError, OSError) as exc:
-            logger.warning(f"Corrupt cache entry for {url}: {exc} — evicting")
+            logger.warning(f"Corrupt cache entry for {url}: {exc} - evicting")
             self._safe_remove(data_path, meta_path)
             return None
 

@@ -82,7 +82,7 @@ def _store_id(url: str) -> int:
 
 def main() -> None:
     logger.info("=" * 60)
-    logger.info("Okala Crawler — starting")
+    logger.info("Okala Crawler - starting")
     logger.info(f"Stores: {len(STORES)}  |  Categories: {len(CATEGORIES)}")
     logger.info("=" * 60)
 
@@ -138,7 +138,7 @@ if __name__ == "__main__":
     try:
         main()
     except KeyboardInterrupt:
-        logger.warning("Interrupted by user (Ctrl+C) — partial results may have been saved")
+        logger.warning("Interrupted by user (Ctrl+C) - partial results may have been saved")
         sys.exit(0)
     except Exception as exc:
         logger.critical(f"Fatal error: {exc}", exc_info=True)
